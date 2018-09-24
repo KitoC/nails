@@ -1,0 +1,14 @@
+.default-button {
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1px 10px 2px;
+    border-radius: 5px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+    color: buttontext;
+    background-color: buttonface;
+    height: 25px;
+    font-size: 1rem;
+}

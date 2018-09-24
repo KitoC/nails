@@ -1,0 +1,1 @@
+module.exports = ['DEV_SERVER', 'TEST_SERVER', 'JWT_SECRET']
