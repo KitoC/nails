@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
+const colors = require("./lib/colors");
+const success = colors.success("\nNails success! ");
+const error = colors.error("\nNails error! ");
+
 const prog = require("caporal");
 const createCmd = require("./lib/create-cmd");
 const testCmd = require("./lib/test-cmd");
 const generationsCMD = require("./lib/generations");
 const dbCMD = require("./lib/db");
+
+// const errors = require("./error-handling");
 
 // Create nails app command
 prog
@@ -26,11 +32,18 @@ prog
   .help("TODO: Add relevant help info")
   .action(generationsCMD);
 
-// scaffold new model command
+// generations command
 prog
   .command("db", "TODO: Add relevant help info")
-  .argument("<action>", "TODO: Add relevant help info")
-  .argument("[columns...]", "TODO: Add relevant help info")
+  .argument("<action>", "TODO: Add relevant help info", function(opt) {
+    if (["rollback", "migrate"].includes(opt) === false) {
+      throw error +
+        colors.info("Options for db command are: rollback, migrate...");
+    }
+    return opt.toLowerCase();
+  })
+  // TODO: Provide proper error handling for this
+  .argument("[type...]", "TODO: Add relevant help info")
   .help("TODO: Add relevant help info")
   .action(dbCMD);
 
