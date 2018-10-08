@@ -3,8 +3,10 @@
 const colors = require("./lib/colors");
 const success = colors.success("\nNails success! ");
 const error = colors.error("\nNails error! ");
+const { errorLog, infoLog } = require("./lib/utils");
 
 const prog = require("caporal");
+const util = require("util");
 const createCmd = require("./lib/create-cmd");
 const testCmd = require("./lib/test-cmd");
 const generationsCMD = require("./lib/generations");
@@ -24,12 +26,29 @@ prog
   .action(createCmd);
 
 // scaffold new model command
+
 prog
-  .command("g", "TODO: Add relevant help info")
-  .argument("<action>", "TODO: Add relevant help info")
-  .argument("<type>", "TODO: Add relevant help info")
+  .command("generate", "TODO: Add relevant help info for generate command")
+  .alias("g")
+  .argument(
+    "<action>",
+    `Available actions below \n${util.inspect(
+      ["model", "scaffold", "migration"],
+      {
+        depth: null,
+        colors: true
+      }
+    )}\n`
+  )
+  .argument(
+    "<type>",
+    `Available types below \n${util.inspect(["add_columns"], {
+      depth: null,
+      colors: true
+    })}\n`
+  )
   .argument("[columns...]", "TODO: Add relevant help info")
-  .help("TODO: Add relevant help info")
+  .help(`TODO`)
   .action(generationsCMD);
 
 // generations command
