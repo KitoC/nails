@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const colors = require("./lib/colors");
+const colors = require("./lib/utils/colors");
 const success = colors.success("\nNails success! ");
 const error = colors.error("\nNails error! ");
 const { errorLog, infoLog } = require("./lib/utils");
 
 const prog = require("caporal");
 const util = require("util");
-const createCmd = require("./lib/create-cmd");
-const testCmd = require("./lib/test-cmd");
-const generationsCMD = require("./lib/generations");
-const dbCMD = require("./lib/db");
+const createCMD = require("./lib/commands/create");
+// const testCmd = require("./lib/test-cmd");
+const generationsCMD = require("./lib/commands/generations");
+const dbCMD = require("./lib/commands/db");
 
 // const errors = require("./error-handling");
 
@@ -19,11 +19,17 @@ prog
   .version("1.0.0")
   .command("create", "Create a new application")
   .argument("<newProjectName>", "Name of new project being generated")
+  .option("--db <db>", "Which database the project is initially setup with.")
   .option(
-    "--variant <variant>",
-    "Which <variant> of the template is going to be created"
+    "--verbose <isVerbose>",
+    "Pass in true to see the logs of the files being generated.",
+    prog.BOOL
   )
-  .action(createCmd);
+  .option(
+    "--omit <omit>",
+    "Option lets you omit the client or server from being generated."
+  )
+  .action(createCMD);
 
 // scaffold new model command
 
@@ -67,11 +73,11 @@ prog
   .action(dbCMD);
 
 // Testing purposes
-prog
-  .command("test", "for testing commands")
-  // .argument("<modelName>", "New model name")
-  // .argument("[modelColumns...]", "Columns of model")
-  .help("TODO:remove once project is completed.")
-  .action(testCmd);
+// prog
+//   .command("test", "for testing commands")
+//   // .argument("<modelName>", "New model name")
+//   // .argument("[modelColumns...]", "Columns of model")
+//   .help("TODO:remove once project is completed.")
+//   .action(testCmd);
 
 prog.parse(process.argv);

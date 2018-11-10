@@ -17,15 +17,12 @@ router.post('/${model_name}', (req, res) => {
       );
     })
     .catch(error => {
-      console.log(error);
-      console.log(error.message);
       res.status(500).json({ error: error.message });
     });
 });
 
 // GET All ${model_name} DOCUMENTS
 router.get('/${model_name}', (req, res) => {
-  console.log("Made it to BE");
   ${model_name}
     .find()
     .then(data => res.status(200).json(data))
