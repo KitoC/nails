@@ -1,5 +1,3 @@
-module.exports = () => {
-  return `
 const colors = require("./colors");
 const util = require("util");
 
@@ -80,7 +78,4 @@ module.exports = {
   success,
   info,
   warn
-};
-  
-    `;
 };

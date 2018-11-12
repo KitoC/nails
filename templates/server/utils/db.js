@@ -1,7 +1,3 @@
-module.exports = () => {
-  return `
-
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -65,7 +61,18 @@ const dataTypes = type => {
   }
 };
 
-// TODO: determine if this is needed?
+// TODO: figure out how thes eother schema types work
+// var schema = new Schema({
+//   ofArrayOfNumbers: [[Number]],
+//   nested: {
+//     stuff: { type: String, lowercase: true, trim: true }
+//   },
+//   map: Map,
+//   mapOfString: {
+//     type: Map,
+//     of: String
+//   }
+// });
 // NOTE: anything below this comment is exported and will use the above functions/variables for their own purposes.
 
 // datafy: this converts a models field datatype into the correct data types and formats formongoose
@@ -83,6 +90,4 @@ const datafy = model => {
 
 module.exports = {
   datafy
-};
-    `;
 };

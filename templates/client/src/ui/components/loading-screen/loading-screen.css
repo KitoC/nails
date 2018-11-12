@@ -1,0 +1,17 @@
+.loading-screen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0; 
+    left: 0;
+    background: rgba(255,255,255,0.8)
+}
+
+.gif {
+    border-radius: 50%;
+    overflow: hidden;
+}

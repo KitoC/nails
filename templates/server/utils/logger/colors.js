@@ -1,9 +1,13 @@
-module.exports = () => {
-  return `
 const colors = require("colors/safe");
 
 colors.setTheme({
+  //   silly: "rainbow",
+  //   input: "grey",
   test: "cyan",
+  //   prompt: "grey",
+  //   data: "grey",
+  //   info: "yellow",
+
   info: "blue",
   warn: "yellow",
   success: "green",
@@ -11,5 +15,3 @@ colors.setTheme({
 });
 
 module.exports = colors;
-    `;
-};

@@ -1,5 +1,3 @@
-module.exports = () => {
-  return `
 const cors = require("cors");
 const app = require("express")();
 const server = require("http").Server(app);
@@ -38,5 +36,3 @@ server.listen(8080, () =>
 );
 
 module.exports = app;
-  `;
-};
