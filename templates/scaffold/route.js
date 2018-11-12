@@ -51,7 +51,7 @@ router.put("/[[MODEL_NAME]]/:id", (req, res) => {
   [[MODEL_NAME]].update(req.params.id, req.body)
     .then(data => {
       res.status(200).json(data);
-      logger.success({ msg: "Post updated: ", data: data });
+      logger.success({ msg: "[[MODEL_NAME]] updated: ", data: data });
     })
     .catch(error =>
       res.status(500).json({
@@ -65,7 +65,7 @@ router.delete("/[[MODEL_NAME]]/:id", (req, res) => {
   [[MODEL_NAME]].destroy(req.params.id)
     .then(data => {
       res.status(200).json(data);
-      logger.success({ msg: "Post deleted: ", data: data });
+      logger.success({ msg: "[[MODEL_NAME]] deleted: ", data: data });
     })
     .catch(error =>
       res.status(500).json({
