@@ -11,7 +11,7 @@ const columns = ${inspect(columns, {
 
   module.exports = {
     scaffold: ${scaffold},
-    model_name: ${capitalize(name)},
+    model_name: "${capitalize(name)}",
     columns
   };
 
