@@ -1,0 +1,17 @@
+{
+  "name": "[[PROJECT_NAME]]",
+  "nails": "true",
+  "version": "0.0.1",
+  "description": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:client": "cd client && yarn start",
+    "start:server": "cd server && nodemon",
+    "start": "stmux --title \"zoot\" --mouse --wait error --error ERROR --method beep,system -- [ [ -t \"[nails: client] this shows the react server logs. (ctrl + a & k to close all windows) \" \"npm run start:client\"  :  -t \"[nails: server] this shows the back end nodeJS server logs. \" \"npm run start:server\"  ]  ]"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stmux": "^1.5.5"
+  }
+}
