@@ -21,9 +21,9 @@ module.exports = new Promise(async (resolve, reject) => {
   });
 
   await require("fs")
-    .readdirSync(__dirname + "/schema")
+    .readdirSync(__dirname + "/models")
     .forEach(file => {
-      const model = require(`./schema/${file}`);
+      const model = require(`./models/${file}`);
 
       if (model.scaffold) {
         schema.endpoints.push(model.model_name);
