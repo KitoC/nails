@@ -5,7 +5,7 @@ const config = {};
 const databaseDefaults = {
   //
   adaptor: "sqlite3",
-  path: "/db/databases/"
+  path: "/database/local-databases/"
   //   user: your db username here,
   //   password: your db password here
   //   port: your db port number here
