@@ -365,9 +365,9 @@ glob@^7.0.0, glob@^7.0.5:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-hammered-orm@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/hammered-orm/-/hammered-orm-0.0.4.tgz#f56ddc071f444fc0d2bf25b9f3bb0e0725e50f52"
+hammered-orm@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/hammered-orm/-/hammered-orm-0.0.5.tgz#206615b6ca57895c2d34f2e5120c0a34a348eede"
   dependencies:
     colors "^1.3.2"
     dotenv "^6.1.0"
