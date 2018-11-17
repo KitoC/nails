@@ -11,6 +11,7 @@ const createCMD = require("./lib/commands/create");
 // const testCmd = require("./lib/test-cmd");
 const generationsCMD = require("./lib/commands/generations");
 const dbCMD = require("./lib/commands/db");
+const testsCMD = require("./lib/commands/tests");
 
 // const errors = require("./error-handling");
 
@@ -73,11 +74,11 @@ prog
   .action(dbCMD);
 
 // Testing purposes
-// prog
-//   .command("test", "for testing commands")
-//   // .argument("<modelName>", "New model name")
-//   // .argument("[modelColumns...]", "Columns of model")
-//   .help("TODO:remove once project is completed.")
-//   .action(testCmd);
+prog
+  .command("test", "for testing commands")
+  .argument("<test>", "")
+  .argument("[modelColumns...]", "Columns of model")
+  .help("TODO:remove once project is completed.")
+  .action(testsCMD);
 
 prog.parse(process.argv);
