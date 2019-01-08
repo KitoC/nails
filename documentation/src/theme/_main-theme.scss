@@ -1,0 +1,39 @@
+$primary-color: green;
+
+$themes: (
+  light: (
+    bgColorPrimary: #aaa,
+    bgColorSecondary: #f2f2f2,
+    textColor: red,
+    buttonTextColor: #408bbd,
+    buttonTextTransform: none,
+    buttonTextHoverColor: #61b0e7,
+    buttonColor: #fff,
+    buttonBorder: 2px solid #fff
+  ),
+  dark: (
+    bgColorPrimary: #222,
+    bgColorSecondary: #aaa,
+    textColor: #ddd,
+    buttonTextColor: #aaa,
+    buttonTextTransform: uppercase,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid #aaa
+  )
+);
+@mixin themify($property, $key, $themes: $themes) {
+  // Iterate over the themes
+  @each $theme, $colors in $themes {
+    // Create a selector (e.g. `.media.theme-unicorn, .theme-unicorn .media`)
+    :global(.theme-#{$theme}) & {
+      #{$property}: map-get($colors, $key);
+    }
+  }
+}
+@mixin text-color($arguments...) {
+  @include themify("color", "textColor");
+}
+@mixin background-color($type: "bgColorPrimary") {
+  @include themify("background-color", $type);
+}

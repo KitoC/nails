@@ -4,6 +4,7 @@ const colors = require("./lib/utils/colors");
 const success = colors.success("\nNails success! ");
 const error = colors.error("\nNails error! ");
 const { errorLog, infoLog } = require("./lib/utils");
+const shellJS = require("shelljs");
 
 const prog = require("caporal");
 const util = require("util");
@@ -80,5 +81,16 @@ prog
   .argument("[modelColumns...]", "Columns of model")
   .help("TODO:remove once project is completed.")
   .action(testsCMD);
+
+// Spins up nails documentation on a local server
+prog
+  .command("documentation", "for running documentation server")
+  .alias("docs")
+  .help(
+    "This command launches the Nails documentation on a localhost server so you can read the docs offline ^_^."
+  )
+  .action(() => {
+    require(`${__dirname}/documentation`);
+  });
 
 prog.parse(process.argv);

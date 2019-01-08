@@ -1,0 +1,27 @@
+%navItemDefaults {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+%navLinkDefaults {
+  text-decoration: none;
+}
+
+.navItem {
+  @extend %navItemDefaults;
+}
+
+.navItem a {
+  @extend %navLinkDefaults;
+  color: white;
+  &:visited {
+    color: white;
+  }
+}
+
+.isActive a {
+  @extend %navLinkDefaults;
+  @extend %navItemDefaults;
+  color: #577bb2;
+}

@@ -1,0 +1,18 @@
+@import "~theme/main-theme";
+
+.layoutContainer {
+  display: flex;
+  height: 100%;
+}
+
+.menu {
+  width: 220px;
+
+  @include background-color;
+  @include text-color;
+}
+
+.documentationWindow {
+  width: 100%;
+  @include background-color("bgColorSecondary");
+}

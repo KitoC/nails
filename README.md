@@ -66,7 +66,7 @@ To generate an app.
 
 To scaffold a model
 
-1. From the root directory of your project run `nails g scaffold <model_name> <column_name>:<data_type>` e.g. `nails g scaffold posts title:text body:text` (note: not all datatypes have properly been tested witht he new Hammered ORM yet.)
+1. From the root directory of your project run `nails g scaffold <model_name> <column_name>:<data_type>` e.g. `nails g scaffold posts title:text body:text` (note: not all datatypes have properly been tested with the new Hammered ORM yet.)
 2. run `nails db migrate` and the table will be created and relevant files will be copied form Nails into your project directory.
 
 Other commands that are currently working
