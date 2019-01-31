@@ -1,4 +1,4 @@
-const express = require("express");
+module.exports = `const express = require("express");
 // let [[MODEL_NAME]];
 require("../database").then(res => {
   [[MODEL_NAME]] = res.[[MODEL_NAME]];
@@ -15,7 +15,6 @@ router.post("/[[MODEL_NAME]]", (req, res) => {
       logger.success({ msg: "New [[MODEL_NAME]] created: ", data: data });
     })
     .catch(error => {
-      console.log(error);
       res.status(500).json({ error });
     });
 });
@@ -24,7 +23,6 @@ router.post("/[[MODEL_NAME]]", (req, res) => {
 router.get("/[[MODEL_NAME]]", (req, res) => {
   [[MODEL_NAME]].get()
     .then(data => {
-      console.log("just testing", data);
       res.status(200).json(data);
     })
     .catch(error =>
@@ -76,4 +74,4 @@ router.delete("/[[MODEL_NAME]]/:id", (req, res) => {
 
 logger.info({ msg: "/[[MODEL_NAME]] route connected: " });
 
-module.exports = router;
+module.exports = router;`;

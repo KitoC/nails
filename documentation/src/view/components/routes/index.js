@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import exampleConfig from "config/routes";
 
 const RouteRenderer = ({ RouteList, route }) => {
-  console.log({ route });
   if (route.screen) {
     return (
       <Fragment>
@@ -23,7 +22,6 @@ const RouteRenderer = ({ RouteList, route }) => {
 
 const RouteList = ({ menuItems }) => {
   const routes = Object.keys(menuItems);
-  console.log({ routes });
   return routes.map((route, index) => (
     <RouteRenderer key={index} RouteList={RouteList} route={menuItems[route]} />
   ));
