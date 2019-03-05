@@ -4,7 +4,6 @@ import Menu from "view/components/menu";
 import Routes from "view/components/routes";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import exampleConfig from "view/screens";
-console.log({ exampleConfig });
 
 const Layout = () => {
   return (

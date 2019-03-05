@@ -14,7 +14,6 @@ const MenuItem = ({
   const menuLabel = screen ? <Link to={path}>{label}</Link> : <a>{label}</a>;
 
   const isActive = selectedPath === path ? styles.isActive : styles.navItem;
-  console.log({ selectedPath, activePath });
 
   return (
     <li>

@@ -1,6 +1,6 @@
 {
   "name": "nails",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A cli driven app for generation easy generation of nodeJS and React apps. Think Rails, but for node... Nails.. *cough *cough",
   "main": "index.js",
   "preferGlobal": true,

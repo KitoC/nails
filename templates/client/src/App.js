@@ -17,7 +17,6 @@ const linkStyle = { margin: "5px", color: "white" };
 class App extends Component {
   componentDidMount() {
     getSchema((err, schema) => {
-      console.log("fe schema", schema);
       store.dispatch({ type: "SET_SCHEMA", schema });
     });
   }

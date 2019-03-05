@@ -14,7 +14,6 @@ class Form extends Component {
     const { generateFields, prePopulate } = this.props;
 
     generateFields.map(field => {
-      console.log("field in loop", field);
       this.setState({
         [field.name]: prePopulate ? prePopulate[field.name] : null
       });

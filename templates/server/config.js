@@ -1,4 +1,6 @@
-require("dotenv").config({ path: __dirname + ".env" });
+// uncomment the following line to make use of the .env file if neccessary.
+// require("dotenv").config({ path: __dirname + ".env" });
+
 const config = {};
 
 // TODO: write informational comments here
@@ -14,15 +16,15 @@ const databaseDefaults = {
 
 config.database = {
   development: {
-    database: "[[PROJECT_NAME]]-dev",
+    database: "new-template-dev",
     ...databaseDefaults
   },
   test: {
-    database: "[[PROJECT_NAME]]-test",
+    database: "new-template-test",
     ...databaseDefaults
   },
   production: {
-    database: "[[PROJECT_NAME]]-production",
+    database: "new-template-production",
     ...databaseDefaults
   }
 };

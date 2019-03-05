@@ -1,11 +1,8 @@
-// let schema;
+const { schema } = require("../database");
 
-module.exports = new Promise((resolve, reject) => {
-  require("../database").then(res => {
-    schema = res.schema;
-    resolve({
-      event: "schema",
-      data: schema
-    });
-  });
-});
+const socketDBSchema = {
+  event: "schema",
+  data: schema
+};
+
+module.exports = socketDBSchema;

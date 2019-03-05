@@ -2,8 +2,9 @@ const cors = require("cors");
 const app = require("express")();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+const { socketDBSchema } = require("./sockets");
 
-const logger = require("./utils/logger");
+const { logger } = require("./utils");
 
 const bodyParser = require("body-parser");
 const routes = require("./routes");
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-// routes
+// routes;
 if (routes) {
   for (let key in routes) {
     app.use(routes[key]);
@@ -22,13 +23,8 @@ if (routes) {
 
 // sockets
 io.on("connection", client => {
-  require("./sockets").then(sockets => {
-    sockets.map(socket => {
-      logger.info({ code: "socket_connected", info: socket });
-
-      client.emit(socket.event, socket.data);
-    });
-  });
+  client.emit(socketDBSchema.event, socketDBSchema.data);
+  logger.info({ code: "socket_connected", info: socketDBSchema.event });
 });
 
 server.listen(8080, () =>

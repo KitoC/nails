@@ -1,4 +1,4 @@
-const db = require("./db");
 const stringFormatters = require("./stringFormatters");
+const logger = require("./logger/index");
 
-module.exports = { ...db, ...stringFormatters };
+module.exports = { ...stringFormatters, logger };
